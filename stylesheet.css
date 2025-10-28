@@ -109,19 +109,48 @@ h2 {
   font-size: 32px;
 }
 
-.one {
+/*.one {
   width: 160px;
   height: 160px;
   position: relative;
 }
+*/
 
-.two {
+/*.two {
   width: 160px;
   height: 160px;
   position: absolute;
   transition: opacity .2s ease-in-out;
   -moz-transition: opacity .2s ease-in-out;
   -webkit-transition: opacity .2s ease-in-out;
+}*/
+
+.one {
+  position: relative; /* 建立相对定位的容器 */
+  display: inline-block; /* 让容器大小适应内容 */
+}
+
+.two {
+  position: absolute; /* 绝对定位，相对于 .one 容器 */
+  top: 0;
+  left: 0;
+  right: 0; /* 确保宽度撑满 */
+  bottom: 0; /* 确保高度撑满 */
+  opacity: 0; /* 初始状态：完全透明 */
+  transition: opacity .2s ease-in-out; /* 添加 0.2 秒的淡入淡出效果 */
+  /* background: #000; /* 可选：如果视频尺寸不完全匹配，可以加个黑色背景 */
+}
+
+.two video { /* 确保视频充满 .two 容器 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 保持宽高比，裁剪多余部分 */
+}
+
+/* (可选) 确保静态图片也是块级元素或行内块元素 */
+.one img {
+    display: block; /* 防止图片下方有多余空隙 */
+    max-width: 100%; /* 确保图片不会超出容器 */
 }
 
 .fade {
