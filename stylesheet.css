@@ -1,3 +1,8 @@
+body {
+  margin: 0; /* 移除 body 的所有外边距 */
+  padding: 0; /* 同时移除内边距，是个好习惯 */
+}
+
 /* latin-ext */
 @font-face {
   font-family: 'Lato';
