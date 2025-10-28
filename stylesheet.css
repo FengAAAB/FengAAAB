@@ -125,33 +125,39 @@ h2 {
   -webkit-transition: opacity .2s ease-in-out;
 }*/
 
+/* --- 控制图片/视频悬停效果 --- */
 .one {
-  position: relative; /* 建立相对定位的容器 */
-  display: inline-block; /* 让容器大小适应内容 */
+  position: relative; 
+  display: inline-block; 
+  width: 160px; /* 明确设置宽度，与您 img 标签一致 */
+  aspect-ratio: 16 / 9; /* 设置宽高比为 16:9，您可以根据视频调整 */
+  overflow: hidden; /* 隐藏内部可能溢出的部分 */
 }
 
 .two {
-  position: absolute; /* 绝对定位，相对于 .one 容器 */
+  position: absolute; 
   top: 0;
   left: 0;
-  right: 0; /* 确保宽度撑满 */
-  bottom: 0; /* 确保高度撑满 */
-  opacity: 0; /* 初始状态：完全透明 */
-  transition: opacity .2s ease-in-out; /* 添加 0.2 秒的淡入淡出效果 */
-  /* background: #000; /* 可选：如果视频尺寸不完全匹配，可以加个黑色背景 */
+  right: 0; 
+  bottom: 0; 
+  opacity: 0; 
+  transition: opacity .2s ease-in-out; 
 }
 
-.two video { /* 确保视频充满 .two 容器 */
+.two video { 
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 保持宽高比，裁剪多余部分 */
+    object-fit: cover; 
 }
 
-/* (可选) 确保静态图片也是块级元素或行内块元素 */
 .one img {
-    display: block; /* 防止图片下方有多余空隙 */
-    max-width: 100%; /* 确保图片不会超出容器 */
+    /* display: block;  <-- 移除或注释掉这行 */
+    max-width: 100%; 
+    width: 100%; /* 让图片宽度填充容器 */
+    height: 100%; /* 让图片高度填充容器 */
+    object-fit: cover; /* 图片也裁剪以适应新的宽高比 */
 }
+/* --- 效果控制结束 --- */
 
 .fade {
   transition: opacity .2s ease-in-out;
