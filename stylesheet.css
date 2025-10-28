@@ -134,7 +134,7 @@ h2 {
 .one {
   position: relative; 
   display: inline-block; 
-  width: 240px; /* <--- 增大宽度 */
+  width: 300px; /* <--- 增大宽度 */
   aspect-ratio: 16 / 9; /* 保持或根据需要调整宽高比 */
   overflow: hidden; 
 }
